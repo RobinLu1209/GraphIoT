@@ -1,27 +1,17 @@
 工作日志
 
------------------------------2021/6/21-----------------------------------
-今天用了ESP32板子，代码烧写没有问题，wifi可连接。基于mosquitto的MQTT在localhost 自发自收正常。但是，“A发B收”的server-client架构遇到问题，明天需要解决。
-
-明天目标：️1. 实现“A发B收”的server-client架构 2. 加入温湿度传感器进行“A发B收”️ 3. 研究基于mosquitto将收到的信息进行存储，实现“A发B存”
-
 -----------------------------2021/6/22-----------------------------------
 
 6/21晚实现了“自发自收”，“他发我收”时出现了error：目标计算机积极拒绝连接 的问题，
-
 在下面这篇文章中找到了解决方案：
-
 MQTT服务器Mosquitto的使用及配置过程中的一些问题和解决方法：
-
 https://blog.csdn.net/qq_43370609/article/details/113769486
-
 6/22实现了“他发我收”包括命令行控制client和server端—>python脚本控制client，命令行控制server—>
-
 python脚本控制client和server
-
 下一步需要实现esp32充当client端，python脚本控制server，实现数据采集收发和存储。
-
 截止目前的问题是client端DHT22传感器无法工作
+mosquitto使用说明：https://www.cnblogs.com/zkwarrior/p/10972464.html
 
-##mosquitto使用说明：https://www.cnblogs.com/zkwarrior/p/10972464.html
-
+-----------------------------2021/6/21-----------------------------------
+今天用了ESP32板子，代码烧写没有问题，wifi可连接。基于mosquitto的MQTT在localhost 自发自收正常。但是，“A发B收”的server-client架构遇到问题，明天需要解决。
+明天目标：️1. 实现“A发B收”的server-client架构 2. 加入温湿度传感器进行“A发B收”️ 3. 研究基于mosquitto将收到的信息进行存储，实现“A发B存”
